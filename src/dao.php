@@ -58,9 +58,9 @@ class DAO {
             $preparedStatement->execute();
             $row = $preparedStatement->fetch();
             if($row['total'] == 1){
-                return true;
+                return 1;
             } else {
-                return false;
+                return 0;
             }
         }catch (Exception $e){
             echo print_r($e,1);

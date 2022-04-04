@@ -13,7 +13,6 @@
     } else {
         $errors[] = "This user or password you entered is not valid.";
         $_SESSION['login-errors'] = $errors;
-        $_SESSION['error-origin'] = "login";
 //        header('Location:login.php');
     }
     echo"<pre>" . print_r($_SESSION) . "</pre>"
