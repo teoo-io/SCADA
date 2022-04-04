@@ -1,14 +1,19 @@
 <?php
     session_start();
+    session_unset();
     $email = $_POST['email'];
     $password = $_POST['password'];
     require_once 'dao.php';
     $dao = new DAO();
+    $errors = array();
     $_SESSION['authenticated'] = $dao->userExists($email, $password);
 
     if($_SESSION['authenticated']){
         header('Location: index.php');
     } else {
+        $errors[] = "This user or password is not valid.";
+        $_SESSION['errors'] = $errors;
+        $_SESSION['error-origin'] = "login";
         header('Location:login.php');
     }
     exit;

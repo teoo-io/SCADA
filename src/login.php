@@ -24,7 +24,7 @@ if (isset($_SESSION["email_preset"])) {
                 <!-- <img class="login-form-logo" src="img/logo-large.png"> -->
 
                 <?php
-                if (isset($_SESSION["errors"])) {
+                if (isset($_SESSION["errors"]) && $_SESSION['error-origin'] == "create-user") {
                     echo '<input id="tab-1" type="radio" name="tab" class="sign-in"><label for="tab-1" class="tab">Sign In</label>';
                     echo '<input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Create User</label>';
                 } else {
@@ -66,17 +66,17 @@ if (isset($_SESSION["email_preset"])) {
                                 <input type="submit" class="button" id="create_user" value="Create User">
                             </div>
                         </form>
-                        <div>
-                            <?php
-                                if (isset($_SESSION["errors"])) {
-                                    echo "<pre>ERROR: </pre><ul>";
-                                    foreach ($_SESSION["errors"] as $error){
-                                        echo "<li><pre>{$error} </pre></li>";
-                                    }
-                                    echo "</ul>";
-                                }
-                            ?>
-                        </div>
+                    </div>
+                    <div>
+                        <?php
+                        if (isset($_SESSION["errors"])) {
+                            echo "<h4>ERROR: </h4><ul>";
+                            foreach ($_SESSION["errors"] as $error){
+                                echo "<li>{$error}</li>";
+                            }
+                            echo "</ul>";
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
