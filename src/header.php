@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']){
+    header("Location: login.php");
+}
+?>
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css">
@@ -15,4 +21,5 @@
                 </div>
 
             </div>
-            <?php require_once 'nav.php'; ?>
+            <?php require_once 'nav.php';
+            ?>

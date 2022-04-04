@@ -37,5 +37,35 @@ class DAO {
         $preparedStatement->bindParam(":app_name",$appName);
         $preparedStatement->execute();
     }
+
+    public function createUser($email,$password,$access) {
+        $connection = $this->getConnection();
+        $statement = "INSERT INTO user (email, password, access) values(:email, :password, :access);";
+        $preparedStatement = $connection->prepare($statement);
+        $preparedStatement->bindParam(":email",$email);
+        $preparedStatement->bindParam(":password",$password);
+        $preparedStatement->bindParam(":access",$access);
+        $preparedStatement->execute();
+    }
+
+    public function userExists($email, $password){
+        $connection = $this->getConnection();
+        try{
+            $statement = "SELECT count(*) as total FROM user WHERE email=:email AND password=:password";
+            $preparedStatement = $connection->prepare($statement);
+            $preparedStatement->bindParam(":email",$email);
+            $preparedStatement->bindParam(":password",$password);
+            $preparedStatement->execute();
+            $row = $preparedStatement->fetch();
+            if($row['total'] == 1){
+                return true;
+            } else {
+                return false;
+            }
+        }catch (Exception $e){
+            echo print_r($e,1);
+            exit;
+        }
+    }
 }
 ?>

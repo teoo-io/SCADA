@@ -46,5 +46,6 @@ CREATE TABLE application (
 INSERT INTO application (app_name,app_title,app_logo,app_directory,app_enabled) values('clinometer','Clinometer','fas fa-mountain','clinometer.php',FALSE);
 INSERT INTO application (app_name,app_title,app_logo,app_directory,app_enabled) values('cam-view','Camera Views','fas fa-video','cam-view.php',FALSE);
 INSERT INTO application (app_name,app_title,app_logo,app_directory,app_enabled) values('lights','External Lights','fas fa-lightbulb','lights.php',TRUE);
-
-SELECT * FROM application;
+INSERT INTO user (email, password, access) values('m@teoo.io','123','1');
+SELECT count(*) as total FROM user WHERE email='m@teoo.io' AND password='123';
+SELECT * FROM user;
