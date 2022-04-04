@@ -11,8 +11,8 @@
     if($_SESSION['authenticated']){
         header('Location: index.php');
     } else {
-        $errors[] = "This user or password is not valid.";
-        $_SESSION['errors'] = $errors;
+        $errors[] = "This user or password you entered is not valid.";
+        $_SESSION['login-errors'] = $errors;
         $_SESSION['error-origin'] = "login";
         header('Location:login.php');
     }

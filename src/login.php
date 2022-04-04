@@ -47,6 +47,17 @@ if (isset($_SESSION["email_preset"])) {
                                 <input class="button" type="submit" name="submit" id="login" value="Login"/>
                             </div>
                         </form>
+                        <div>
+                            <?php
+                            if (isset($_SESSION["login-errors"])) {
+                                echo "<h4>ERROR: </h4><ul>";
+                                foreach ($_SESSION["errors"] as $error){
+                                    echo "<li>{$error}</li>";
+                                }
+                                echo "</ul>";
+                            }
+                            ?>
+                        </div>
                     </div>
                     <div class="sign-up-htm">
                         <form action="user_create_handler.php" method="POST">
@@ -66,17 +77,17 @@ if (isset($_SESSION["email_preset"])) {
                                 <input type="submit" class="button" id="create_user" value="Create User">
                             </div>
                         </form>
-                    </div>
-                    <div>
-                        <?php
-                        if (isset($_SESSION["errors"])) {
-                            echo "<h4>ERROR: </h4><ul>";
-                            foreach ($_SESSION["errors"] as $error){
-                                echo "<li>{$error}</li>";
-                            }
-                            echo "</ul>";
-                        }
-                        ?>
+                        <div>
+                            <?php
+                                if (isset($_SESSION["create-user-errors"])) {
+                                    echo "<h4>ERROR: </h4><ul>";
+                                    foreach ($_SESSION["errors"] as $error){
+                                        echo "<li>{$error}</li>";
+                                    }
+                                    echo "</ul>";
+                                }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

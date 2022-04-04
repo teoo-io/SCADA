@@ -27,7 +27,7 @@
     }
 
     if(count($errors) > 0){
-        $_SESSION['errors'] = $errors;
+        $_SESSION['create-user-errors'] = $errors;
         $_SESSION['error-origin'] = "create-user";
     } else {
         $dao->createUser($email, $password,1);
