@@ -81,7 +81,7 @@ if (isset($_SESSION["email_preset"])) {
                             <?php
                                 if (isset($_SESSION["create-user-errors"])) {
                                     echo "<h4>ERROR: </h4><ul>";
-                                    foreach ($_SESSION["errors"] as $error){
+                                    foreach ($_SESSION["create-user-errors"] as $error){
                                         echo "<li>{$error}</li>";
                                     }
                                     echo "</ul>";
