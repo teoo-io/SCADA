@@ -1,5 +1,6 @@
 <?php
     session_start();
+    session_unset();
     require_once 'dao.php';
     $dao = new DAO();
     $email = $_POST['email'];
