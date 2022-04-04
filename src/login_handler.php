@@ -9,12 +9,13 @@
     $_SESSION['authenticated'] = $dao->userExists($email, $password);
 
     if($_SESSION['authenticated']){
-        header('Location: index.php');
+//        header('Location: index.php');
     } else {
         $errors[] = "This user or password you entered is not valid.";
         $_SESSION['login-errors'] = $errors;
         $_SESSION['error-origin'] = "login";
-        header('Location:login.php');
+//        header('Location:login.php');
     }
-    exit;
+    echo"<pre>" . print_r($_SESSION) . "</pre>"
+//    exit;
 ?>
