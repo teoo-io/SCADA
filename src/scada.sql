@@ -49,3 +49,4 @@ INSERT INTO application (app_name,app_title,app_logo,app_directory,app_enabled) 
 INSERT INTO user (email, password, access) values('m@teoo.io','123','1');
 SELECT count(*) as total FROM user WHERE email='m@teoo.io' AND password='123';
 SELECT * FROM user;
+SELECT count(*) as total FROM user WHERE email='m@teoo.io';

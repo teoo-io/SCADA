@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]) {
-    header("Location:granted.php");
+if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"]) {
+    header("Location: index.php");
 }
 
 $email = "";
@@ -21,8 +21,17 @@ if (isset($_SESSION["email_preset"])) {
     <div id="page-container">
         <div class="login-wrap">
             <div class="login-html">
-                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Create User</label>
+                <!-- <img class="login-form-logo" src="img/logo-large.png"> -->
+
+                <?php
+                if (isset($_SESSION["errors"])) {
+                    echo '<input id="tab-1" type="radio" name="tab" class="sign-in"><label for="tab-1" class="tab">Sign In</label>';
+                    echo '<input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Create User</label>';
+                } else {
+                    echo '<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>';
+                    echo '<input id="tab-2" type="radio" name="tab" class="sign-up" ><label for="tab-2" class="tab">Create User</label>';
+                }
+                ?>
                 <div class="login-form">
                     <div class="sign-in-htm">
                         <form action="login_handler.php" method="POST">
@@ -57,6 +66,17 @@ if (isset($_SESSION["email_preset"])) {
                                 <input type="submit" class="button" id="create_user" value="Create User">
                             </div>
                         </form>
+                        <div>
+                            <?php
+                                if (isset($_SESSION["errors"])) {
+                                    echo "<pre>ERROR: </pre><ul>";
+                                    foreach ($_SESSION["errors"] as $error){
+                                        echo "<li><pre>{$error} </pre></li>";
+                                    }
+                                    echo "</ul>";
+                                }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

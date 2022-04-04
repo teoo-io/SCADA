@@ -67,5 +67,23 @@ class DAO {
             exit;
         }
     }
+    public function emailExists($email){
+        $connection = $this->getConnection();
+        try{
+            $statement = "SELECT count(*) as total FROM user WHERE email=:email";
+            $preparedStatement = $connection->prepare($statement);
+            $preparedStatement->bindParam(":email",$email);
+            $preparedStatement->execute();
+            $row = $preparedStatement->fetch();
+            if($row['total'] == 1){
+                return true;
+            } else {
+                return false;
+            }
+        }catch (Exception $e){
+            echo print_r($e,1);
+            exit;
+        }
+    }
 }
 ?>
