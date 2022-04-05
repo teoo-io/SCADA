@@ -32,7 +32,7 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
                     </div>
                     <div class="group">
                         <label class="label" for="password">Repeat Password</label>
-                        <input class="input" placeholder="PASSWORD" type="password" name="repeat_password" id="repeat_password" value=""/>
+                        <input class="input" placeholder="REPEAT PASSWORD" type="password" name="repeat_password" id="repeat_password" value=""/>
                     </div>
                     <div class="group">
                         <input type="submit" class="button" id="create_user" value="Create User">
