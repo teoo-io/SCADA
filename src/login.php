@@ -4,11 +4,6 @@ session_start();
 if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
     header("Location: index.php");
 }
-
-if (!isset($_SESSION["login-errors"])){
-
-    session_unset();
-}
 ?>
 <html lang="en">
     <head>
@@ -56,4 +51,3 @@ if (!isset($_SESSION["login-errors"])){
     </div>
     </body>
 </html>
-

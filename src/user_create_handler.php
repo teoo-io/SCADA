@@ -21,7 +21,7 @@
         $errors[] = "You did not enter a password.";
     } else if($password != $repeat_password){
         $errors[] = "Passwords you entered do not match.";
-    } else if($email_matches[0] == null){
+    } else if($password_matches[0] == null){
         $errors[] = "Password must be at least 8 characters, at least one letter, one number and one special character.";
     }
     $_SESSION['email'] = $email;
