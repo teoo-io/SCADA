@@ -28,10 +28,10 @@
 
     if(count($errors) > 0){
         $_SESSION['create-user-errors'] = $errors;
-        $_SESSION['error-origin'] = "create-user";
+        header("Location: create_user.php");
     } else {
         $dao->createUser($email, $password,1);
+        header("Location: login.php");
     }
-    header("Location: login.php");
     exit;
 ?>

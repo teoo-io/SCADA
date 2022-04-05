@@ -1,6 +1,5 @@
 <?php
     session_start();
-    session_unset();
     $email = $_POST['email'];
     $password = $_POST['password'];
     require_once 'dao.php';
@@ -15,5 +14,6 @@
         $_SESSION['login-errors'] = $errors;
         header('Location:login.php');
     }
+    $_SESSION['email'] = $email;
     exit;
 ?>

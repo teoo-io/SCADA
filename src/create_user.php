@@ -29,7 +29,7 @@ if (isset($_SESSION["email_preset"])) {
                 <form action="user_create_handler.php" method="POST">
                     <div class="group">
                         <label class="label" for="email">Email</label>
-                        <input class="input" type="text" name="email" id="email" value="<?php echo $email; ?>"/>
+                        <input class="input" type="text" name="email" id="email" value="<?php if (isset($_SESSION['email'])){echo $_SESSION['email'];}?>"/>
                     </div>
                     <div class="group">
                         <label class="label" for="password">Password</label>
