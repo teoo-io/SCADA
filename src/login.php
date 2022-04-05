@@ -4,6 +4,8 @@ session_start();
 if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
     header("Location: index.php");
 }
+
+
 ?>
 <html lang="en">
     <head>
@@ -24,7 +26,7 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
                         <form action="login_handler.php" method="POST">
                             <div class="group">
                                 <label class="label" for="email">Email</label>
-                                <input class="input" type="text" name="email" id="email" placeholder="EMAIL" value="<?php if (isset($_SESSION['email']))?>"/>
+                                <input class="input" type="text" name="email" id="email" placeholder="EMAIL" value="<?php if (isset($_SESSION['email'])){echo $_SESSION['email'];}?>"/>
                             </div>
                             <div class="group">
                                 <label class="label" for="password">Password</label>
@@ -34,17 +36,22 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
                                 <input class="button" type="submit" name="submit" id="login" value="Login"/>
                             </div>
                         </form>
-                        <div>
                             <?php
                             if (isset($_SESSION["login-errors"])) {
-                                echo "<h4>ERROR: </h4><ul>";
+                                echo "<div><h4>ERROR: </h4><ul>";
                                 foreach ($_SESSION["login-errors"] as $error){
                                     echo "<li>{$error}</li>";
                                 }
-                                echo "</ul>";
+                                echo "</ul></div>";
                             }
                             ?>
-                        </div>
+
+                            <?php
+                            if (isset($_SESSION["user-created"]) && $_SESSION["user-created"] != "") {
+                                echo "<div><h4>User '{$_SESSION["user-created"]}' was created successfully! </h4><ul>";
+                                $_SESSION["user-created"] = "";
+                            }
+                            ?>
                 </div>
             </div>
         </div>

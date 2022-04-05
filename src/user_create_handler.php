@@ -30,6 +30,8 @@
         header("Location: create_user.php");
     } else {
         $dao->createUser($email, $password,1);
+        $alert = "User with email " . $email . "successfully created.";
+        $_SESSION['user-created'] = $email;
         header("Location: login.php");
     }
     exit;
