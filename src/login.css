@@ -91,6 +91,7 @@ a{color:inherit;text-decoration:none}
 }
 
 label{
+    text-transform:uppercase;
     color:#fff;
     font-size:12px;
 }
@@ -98,7 +99,7 @@ label{
     background: var(--yellow);
     cursor: pointer;
 }
-input {
+input#login.button {
     color:  var(--navy);
 }
 label .icon{

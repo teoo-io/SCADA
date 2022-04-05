@@ -29,11 +29,11 @@ if (isset($_SESSION["email_preset"])) {
                         <form action="login_handler.php" method="POST">
                             <div class="group">
                                 <label class="label" for="email">Email</label>
-                                <input class="input" type="text" name="email" id="email" placeholder="Enter your e-mail" value="<?php if (isset($_SESSION['email']))?>"/>
+                                <input class="input" type="text" name="email" id="email" placeholder="Enter Your E-mail" value="<?php if (isset($_SESSION['email']))?>"/>
                             </div>
                             <div class="group">
                                 <label class="label" for="password">Password</label>
-                                <input class="input" type="password" name="password" id="password" value=""/>
+                                <input class="input" placeholder="Password" type="password" name="password" id="password" value=""/>
                             </div>
                             <div class="group">
                                 <input class="button" type="submit" name="submit" id="login" value="Login"/>
