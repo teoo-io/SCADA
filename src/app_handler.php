@@ -3,6 +3,6 @@
     $dao = new DAO();
     echo "sent...".$_POST["appName"] ."<br>";
     $dao->enableApplication($_POST["appName"]);
-   // header('Location: settings.php');
+    header('Location: settings.php');
     exit;
 ?>

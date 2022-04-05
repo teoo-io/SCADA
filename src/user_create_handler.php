@@ -22,7 +22,7 @@
     } else if($password != $repeat_password){
         $errors[] = "Passwords you entered do not match.";
     } else if($password_matches[0] == null){
-        $errors[] = "Password must be at least 8 characters, at least one letter, one number and one special character.";
+        $errors[] = "Password must contain at least 8 characters, one letter, one number and one special character.";
     }
     $_SESSION['email'] = $email;
     if(count($errors) > 0){

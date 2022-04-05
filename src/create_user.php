@@ -7,7 +7,7 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
 ?>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon"/>
     <title>R2 Wheeling</title>
     <script src="https://kit.fontawesome.com/9a7cc6e46e.js" crossorigin="anonymous"></script>

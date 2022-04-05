@@ -7,10 +7,114 @@
     --highlight: #D0D0D0;
     --white: #F2F2F2;
 }
-body {
-    margin: 0;
-    font-family: monospace;
+body{
+    margin:0;
+    color:#6a6f8c;
+    background:#c8c8c8;
+    font:600 16px/18px 'Open Sans',sans-serif;
 }
+
+/* LOGIN FORM */
+
+a{color:inherit;text-decoration:none}
+
+.login-form-logo {
+    height: 10%;
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-wrap{
+    width:100%;
+    margin:auto;
+    max-width:525px;
+    min-height:670px;
+    position:relative;
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+    width:100%;
+    height:100%;
+    position:absolute;
+    padding:90px 70px 50px 70px;
+    background: var(--navy);
+}
+.sign-in-htm,.sign-up-htm{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+}
+.button{
+    text-transform:uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+.tab{
+    text-transform:uppercase;
+    font-size:22px;
+    padding-bottom:5px;
+    margin:0 15px 10px 0;
+    display:inline-block;
+    border-bottom:2px solid transparent;
+}
+.current-tab {
+    text-transform:uppercase;
+    font-size:22px;
+    padding-bottom:5px;
+    margin:0 15px 10px 0;
+    display:inline-block;
+    border-bottom:2px solid;
+    color:#fff;
+    border-color: var(--yellow);
+}
+.login-form{
+    min-height:345px;
+    position:relative;
+    perspective:1000px;
+}
+.group{
+    margin-bottom:15px;
+}
+.label, .input, .button{
+    width:100%;
+    color: var(--white);
+    display:block;
+    font-weight: bold;
+}
+.input,.button{
+    border:none;
+    padding:15px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.1);
+}
+
+label{
+    text-transform:uppercase;
+    color:#fff;
+    font-size:12px;
+}
+.button{
+    background: var(--yellow);
+    cursor: pointer;
+}
+input#login.button,input#create_user.button {
+    color:  var(--navy);
+}
+label .icon{
+    width:15px;
+    height:15px;
+    border-radius:2px;
+    position:relative;
+    display:inline-block;
+    background:rgba(255,255,255,.1);
+}
+
+/* SITE */
+
 
 #nav.fas {
     color: var(--white);
