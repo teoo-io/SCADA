@@ -24,7 +24,7 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
                 <form action="user_create_handler.php" method="POST">
                     <div class="group">
                         <label class="label" for="email">Email</label>
-                        <input class="input" type="text" name="email" id="email" value="<?php if (isset($_SESSION['email'])){echo $_SESSION['email'];}else{echo "Email";}?>"/>
+                        <input class="input" type="text" name="email" placeholder="Enter your e-mail" id="email" value="<?php if (isset($_SESSION['email'])){echo $_SESSION['email'];}?>"/>
                     </div>
                     <div class="group">
                         <label class="label" for="password">Password</label>
