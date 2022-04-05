@@ -21,65 +21,34 @@ if (isset($_SESSION["email_preset"])) {
 <div id="page-container">
     <div class="login-wrap">
         <div class="login-html">
-            <!-- <img class="login-form-logo" src="img/logo-large.png"> -->
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+            <!-- <img class="login-form-logo" src="img/logo-med.png"> -->
+            <a href="login.php"><h4 class="tab">Sign In</h4></a>
+            <a href="create_user.php"><h4 class="tab">Create User</h4></a>
 
             <div class="login-form">
-                <div class="sign-in-htm">
-                    <form action="login_handler.php" method="POST">
-                        <div class="group">
-                            <label class="label" for="email">Email</label>
-                            <input class="input" type="text" name="email" id="email" value="<?php echo $email; ?>"/>
-                        </div>
-                        <div class="group">
-                            <label class="label" for="password">Password</label>
-                            <input class="input" type="password" name="password" id="password" value=""/>
-                        </div>
-                        <div class="group">
-                            <input class="button" type="submit" name="submit" id="login" value="Login"/>
-                        </div>
-                    </form>
-                    <div>
-                        <?php
-                        if (isset($_SESSION["login-errors"])) {
-                            echo "<h4>ERROR: </h4><ul>";
-                            foreach ($_SESSION["login-errors"] as $error){
-                                echo "<li>{$error}</li>";
-                            }
-                            echo "</ul>";
-                        }
-                        ?>
+                <form action="login_handler.php" method="POST">
+                    <div class="group">
+                        <label class="label" for="email">Email</label>
+                        <input class="input" type="text" name="email" id="email" value="<?php echo $email; ?>"/>
                     </div>
-                </div>
-                <div class="sign-up-htm">
-                    <form action="user_create_handler.php" method="POST">
-                        <div class="group">
-                            <label class="label" for="email">Email</label>
-                            <input class="input" type="text" name="email" id="email" value="<?php echo $email; ?>"/>
-                        </div>
-                        <div class="group">
-                            <label class="label" for="password">Password</label>
-                            <input class="input" type="password" name="password" id="password" value=""/>
-                        </div>
-                        <div class="group">
-                            <label class="label" for="password">Repeat Password</label>
-                            <input class="input" type="password" name="repeat_password" id="repeat_password" value=""/>
-                        </div>
-                        <div class="group">
-                            <input type="submit" class="button" id="create_user" value="Create User">
-                        </div>
-                    </form>
-                    <div>
-                        <?php
-                        if (isset($_SESSION["create-user-errors"])) {
-                            echo "<h4>ERROR: </h4><ul>";
-                            foreach ($_SESSION["create-user-errors"] as $error){
-                                echo "<li>{$error}</li>";
-                            }
-                            echo "</ul>";
-                        }
-                        ?>
+                    <div class="group">
+                        <label class="label" for="password">Password</label>
+                        <input class="input" type="password" name="password" id="password" value=""/>
                     </div>
+                    <div class="group">
+                        <input class="button" type="submit" name="submit" id="login" value="Login"/>
+                    </div>
+                </form>
+                <div>
+                    <?php
+                    if (isset($_SESSION["login-errors"])) {
+                        echo "<h4>ERROR: </h4><ul>";
+                        foreach ($_SESSION["login-errors"] as $error){
+                            echo "<li>{$error}</li>";
+                        }
+                        echo "</ul>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>

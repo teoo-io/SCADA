@@ -32,7 +32,6 @@
     } else {
         $dao->createUser($email, $password,1);
     }
-    echo"<pre>" . print_r($_SESSION) . "</pre>"
-//    header("Location: login.php");
-//    exit;
+    header("Location: login.php");
+    exit;
 ?>

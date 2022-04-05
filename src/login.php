@@ -22,7 +22,9 @@ if (isset($_SESSION["email_preset"])) {
         <div class="login-wrap">
             <div class="login-html">
                 <!-- <img class="login-form-logo" src="img/logo-med.png"> -->
-                <h4 class="tab">Sign In</h4>
+                <a href="login.php"><h4 class="tab">Sign In</h4></a>
+                <a href="create_user.php"><h4 class="tab">Create User</h4></a>
+
                 <div class="login-form">
                         <form action="login_handler.php" method="POST">
                             <div class="group">
