@@ -5,9 +5,9 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
     header("Location: index.php");
 }
 
-$email = "";
-if (isset($_SESSION["email_preset"])) {
-    $email = $_SESSION["email_preset"];
+if (!isset($_SESSION["login-errors"])){
+
+    session_unset();
 }
 ?>
 <html lang="en">

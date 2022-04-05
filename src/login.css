@@ -99,7 +99,7 @@ label{
     background: var(--yellow);
     cursor: pointer;
 }
-input#login.button {
+input#login.button,input#create_user.button {
     color:  var(--navy);
 }
 label .icon{
