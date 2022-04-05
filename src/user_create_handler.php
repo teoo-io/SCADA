@@ -12,7 +12,7 @@
     if($email == ""){
         $errors[] = "You did not enter an email.";
     }else if($dao->emailExists($email)){
-        $errors[] = "This email already belongs to a user,";
+        $errors[] = "This email already belongs to a user.";
     }else if($email_matches[0] == null){
         $errors[] = "The email format you entered is not valid.";
     }
@@ -25,7 +25,7 @@
     } else if($email_matches[0] == null){
         $errors[] = "Password must be at least 8 characters, at least one letter, one number and one special character.";
     }
-
+    $_SESSION['email'] = $email;
     if(count($errors) > 0){
         $_SESSION['create-user-errors'] = $errors;
         header("Location: create_user.php");
