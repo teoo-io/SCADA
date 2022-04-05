@@ -16,7 +16,7 @@ spec:
               service:
                 name: APP_NAME-svc
                 port:
-                  number: 80
+                  number: 443
   tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
     - hosts:
         - APP_NAME.DOMAIN

@@ -12,6 +12,7 @@ if (isset($_SESSION["email_preset"])) {
 ?>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="login.css">
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon"/>
         <title>R2 Wheeling</title>
         <script src="https://kit.fontawesome.com/9a7cc6e46e.js" crossorigin="anonymous"></script>
