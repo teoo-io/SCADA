@@ -4,8 +4,6 @@ session_start();
 if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
     header("Location: index.php");
 }
-$email = "Email";
-if (isset($_SESSION['email'])){$email = $_SESSION['email'];}
 ?>
 <html lang="en">
 <head>
@@ -26,7 +24,7 @@ if (isset($_SESSION['email'])){$email = $_SESSION['email'];}
                 <form action="user_create_handler.php" method="POST">
                     <div class="group">
                         <label class="label" for="email">Email</label>
-                        <input class="input" type="text" name="email" id="email" value="<?php $email?>"/>
+                        <input class="input" type="text" name="email" id="email" value="<?php if (isset($_SESSION['email'])){echo $_SESSION['email'];}else{echo "Email";}?>"/>
                     </div>
                     <div class="group">
                         <label class="label" for="password">Password</label>

@@ -12,8 +12,8 @@
     } else {
         $errors[] = "The user or password you entered is not valid.";
         $_SESSION['login-errors'] = $errors;
+        $_SESSION['email'] = $email;
         header('Location: login.php');
     }
-    $_SESSION['email'] = $email;
     exit;
 ?>
