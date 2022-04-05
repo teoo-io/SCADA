@@ -26,7 +26,7 @@ if (isset($_SESSION["email_preset"])) {
             <a href="create_user.php"><h4 class="tab">Create User</h4></a>
 
             <div class="login-form">
-                <form action="login_handler.php" method="POST">
+                <form action="user_create_handler.php" method="POST">
                     <div class="group">
                         <label class="label" for="email">Email</label>
                         <input class="input" type="text" name="email" id="email" value="<?php echo $email; ?>"/>
@@ -36,14 +36,18 @@ if (isset($_SESSION["email_preset"])) {
                         <input class="input" type="password" name="password" id="password" value=""/>
                     </div>
                     <div class="group">
-                        <input class="button" type="submit" name="submit" id="login" value="Login"/>
+                        <label class="label" for="password">Repeat Password</label>
+                        <input class="input" type="password" name="repeat_password" id="repeat_password" value=""/>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" id="create_user" value="Create User">
                     </div>
                 </form>
                 <div>
                     <?php
-                    if (isset($_SESSION["login-errors"])) {
+                    if (isset($_SESSION["create-user-errors"])) {
                         echo "<h4>ERROR: </h4><ul>";
-                        foreach ($_SESSION["login-errors"] as $error){
+                        foreach ($_SESSION["create-user-errors"] as $error){
                             echo "<li>{$error}</li>";
                         }
                         echo "</ul>";
