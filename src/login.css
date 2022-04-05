@@ -90,7 +90,7 @@ a{color:inherit;text-decoration:none}
     background:rgba(255,255,255,.1);
 }
 
-label{
+label, input#password.input, {
     text-transform:uppercase;
     color:#fff;
     font-size:12px;
