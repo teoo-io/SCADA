@@ -12,14 +12,14 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']){
         <script src="https://kit.fontawesome.com/9a7cc6e46e.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div id="page-container">
-            <div class="nav">
-                <i class="fas fa-user-circle" id="user-icon"></i>
-                <div id="logo-header">
+    <div class="header">
+        <i class="fas fa-user-circle" id="user-icon"></i>
+        <div id="logo-header">
 
-                    <h1>R2Wheeling</h1>
-                </div>
+            <h1>R2Wheeling</h1>
+        </div>
 
-            </div>
+    </div>
+        <div class="page-container">
             <?php require_once 'nav.php';
             ?>

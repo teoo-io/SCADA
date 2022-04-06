@@ -3,8 +3,8 @@ $current = 'settings';
 require_once 'header.php';
 
 ?>
-    <div class ="content" id="settings">
-        <ul>
+    <div class ="app" id="settings">
+        <ul id='nav-li'>
             <form method="post">
             <?php
             require_once 'dao.php';
