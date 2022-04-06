@@ -13,12 +13,12 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']){
     </head>
     <body>
         <div class="header">
-            <div id="right-header">
+            <div id="left-header">
             </div>
             <div id="middle-header">
                 <img src="img/logo-large.png" height="200px" width="200px">
             </div>
-            <div class="left-header">
+            <div class="right-header">
                 <input id="menu-input" type="checkbox" name="menu-input" />
                 <label for="menu-input"><h1 class="name"><?php echo " ". $_SESSION['name'] . " ";?></h1><i class="fas fa-user-circle" id="user-icon"></i></label>
                 <div id="drop-down">
