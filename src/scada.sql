@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS user;
 
 CREATE TABLE user (
                       email VARCHAR(256) NOT NULL PRIMARY KEY,
-                      name VARCHAR(64) NOT NULL,
+                      name VARCHAR(256) NOT NULL,
                       password VARCHAR(64) NOT NULL,
                       access INTEGER(1),
                       date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP

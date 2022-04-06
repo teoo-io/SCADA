@@ -60,9 +60,20 @@ body{
     list-style-type: none;
     padding: 0;
 }
+.fas{
+    color: var(--white);
+    font-size: 25px;
+    margin: 5px 5px;
+}
+
+#nav-i {
+    text-shadow: 4px 4px 28px dimgray;
+}
+
 #current_page-i {
     font-size: 35px;
     color: var(--yellow);
+    text-shadow: 4px 4px 28px dimgray;
 }
 
 .header,
@@ -73,14 +84,6 @@ body{
     padding: 1em;
 }
 
-
-
-.fas {
-    color: var(--white);
-    font-size: 25px;
-    margin: 5px 5px;
-    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-}
 
 
 

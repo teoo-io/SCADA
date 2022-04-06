@@ -23,19 +23,19 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
             <div class="login-form">
                 <form action="user_create_handler.php" method="POST">
                     <div class="group">
-                        <label class="label" for="email">Email</label>
+                        <label class="label" for="email">Email*</label>
                         <input class="input" type="text" name="email" placeholder="EMAIL" id="email" value="<?php if (isset($_SESSION['email'])){echo $_SESSION['email'];}?>"/>
                     </div>
                     <div class="group">
-                        <label class="label" for="name">First Name</label>
+                        <label class="label" for="name">First Name*</label>
                         <input class="input" type="text" name="name" placeholder="FIRST NAME" id="name" value="<?php if (isset($_SESSION['name'])){echo $_SESSION['name'];}?>"/>
                     </div>
                     <div class="group">
-                        <label class="label" for="password">Password</label>
+                        <label class="label" for="password">Password*</label>
                         <input class="input" placeholder="PASSWORD" type="password" name="password" id="password" value=""/>
                     </div>
                     <div class="group">
-                        <label class="label" for="repeat_password">Repeat Password</label>
+                        <label class="label" for="repeat_password">Repeat Password*</label>
                         <input class="input" placeholder="REPEAT PASSWORD" type="password" name="repeat_password" id="repeat_password" value=""/>
                     </div>
                     <div class="group">
@@ -49,6 +49,12 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
                         foreach ($_SESSION["create-user-errors"] as $error){
                             echo "<li>{$error}</li>";
                         }
+                        echo "</ul>";
+                    } else {
+                        echo "<h4>ACCOUNT GUIDELINES: </h4><ul>";
+                        echo "<li>Use a valid e-mail format.</li>";
+                        echo "<li>Enter a name (max 10 characters).</li>";
+                        echo "<li>Password must contain at least 8 characters, one letter, one number and one special character.</li>";
                         echo "</ul>";
                     }
                     ?>

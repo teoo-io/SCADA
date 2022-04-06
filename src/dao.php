@@ -68,6 +68,22 @@ class DAO {
             exit;
         }
     }
+
+    public function getUserName($email,$password){
+        $connection = $this->getConnection();
+        try{
+            $statement = "SELECT name FROM user WHERE email=:email AND password=:password";
+            $preparedStatement = $connection->prepare($statement);
+            $preparedStatement->bindParam(":email",$email);
+            $preparedStatement->bindParam(":password",$password);
+            $preparedStatement->execute();
+            return $preparedStatement->fetch();
+        }catch (Exception $e){
+            echo print_r($e,1);
+            exit;
+        }
+    }
+
     public function emailExists($email){
         $connection = $this->getConnection();
         try{
