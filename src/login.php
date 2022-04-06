@@ -43,11 +43,7 @@ if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] == 1) {
                                     echo "<li>{$error}</li>";
                                 }
                                 echo "</ul></div>";
-                            }
-                            ?>
-
-                            <?php
-                            if (isset($_SESSION["user-created"]) && $_SESSION["user-created"] != "") {
+                            } else if (isset($_SESSION["user-created"]) && $_SESSION["user-created"] != "") {
                                 echo "<div><h4>User '{$_SESSION["user-created"]}' was created successfully! </h4><ul>";
                                 $_SESSION["user-created"] = "";
                             }

@@ -49,6 +49,14 @@ class DAO {
         $preparedStatement->execute();
     }
 
+    public function deleteUser($email) {
+        $connection = $this->getConnection();
+        $statement = "DELETE FROM user WHERE email=:email";
+        $preparedStatement = $connection->prepare($statement);
+        $preparedStatement->bindParam(":email",$email);
+        $preparedStatement->execute();
+    }
+
     public function userExists($email, $password){
         $connection = $this->getConnection();
         try{

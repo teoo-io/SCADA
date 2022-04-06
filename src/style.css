@@ -80,8 +80,31 @@ body{
 .footer {
     height: 20vh;
 }
+div.left-header {
+    margin-left: auto;
+}
+
+.footer {
+    text-align: center;
+}
+
 .header, .footer, .app, .nav, .aside {
     padding: 1em;
+}
+
+/* DROP DOWN */
+#menu-input, ul.submenu {
+    display: none;
+}
+
+#menu-label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+#menu-input:checked~ul.submenu {
+    display: block;
 }
 
 
