@@ -76,12 +76,16 @@ body{
     text-shadow: 4px 4px 28px dimgray;
 }
 
+#user-icon {
+    display: inline-block;
+}
+
 .header,
 .footer {
     height: 20vh;
 }
-div.left-header {
-    margin-left: auto;
+div.right-header {
+    float: right;
 }
 
 .footer {
@@ -102,9 +106,17 @@ div.left-header {
     display: block;
     cursor: pointer;
 }
+.menu-li {
+    list-style-type: none;
+    padding: 2px;
+}
 
 #menu-input:checked~ul.submenu {
     display: block;
+}
+
+#drop-down {
+
 }
 
 
