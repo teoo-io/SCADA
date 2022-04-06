@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS user;
 
 CREATE TABLE user (
                       email VARCHAR(256) NOT NULL PRIMARY KEY,
+                      name VARCHAR(64) NOT NULL,
                       password VARCHAR(64) NOT NULL,
                       access INTEGER(1),
                       date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -46,5 +47,5 @@ CREATE TABLE application (
 INSERT INTO application (app_name,app_title,app_logo,app_directory,app_enabled) values('clinometer','Clinometer','fas fa-mountain','clinometer.php',FALSE);
 INSERT INTO application (app_name,app_title,app_logo,app_directory,app_enabled) values('cam-view','Camera Views','fas fa-video','cam-view.php',FALSE);
 INSERT INTO application (app_name,app_title,app_logo,app_directory,app_enabled) values('lights','External Lights','fas fa-lightbulb','lights.php',TRUE);
-INSERT INTO user (email, password, access) values('m@teoo.io','123','1');
+INSERT INTO user (email,name, password, access) values('m@teoo.io','Mateo','123','1');
 SELECT * FROM user;

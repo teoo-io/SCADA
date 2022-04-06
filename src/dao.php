@@ -38,11 +38,12 @@ class DAO {
         $preparedStatement->execute();
     }
 
-    public function createUser($email,$password,$access) {
+    public function createUser($email,$name,$password,$access) {
         $connection = $this->getConnection();
-        $statement = "INSERT INTO user (email, password, access) values(:email, :password, :access);";
+        $statement = "INSERT INTO user (email, name, password, access) values(:email,:name, :password, :access);";
         $preparedStatement = $connection->prepare($statement);
         $preparedStatement->bindParam(":email",$email);
+        $preparedStatement->bindParam(":name",$name);
         $preparedStatement->bindParam(":password",$password);
         $preparedStatement->bindParam(":access",$access);
         $preparedStatement->execute();

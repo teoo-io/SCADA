@@ -5,6 +5,7 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $repeat_password = $_POST['repeat_password'];
+    $name = $_POST['name'];
     $errors = array();
 
     preg_match('/^[A-Za-z0-9+_.-]+@(.+)$/', $email, $email_matches, PREG_UNMATCHED_AS_NULL);
@@ -25,13 +26,16 @@
         $errors[] = "Password must contain at least 8 characters, one letter, one number and one special character.";
     }
     $_SESSION['email'] = $email;
+    $_SESSION['name'] = $name;
     if(count($errors) > 0){
         $_SESSION['create-user-errors'] = $errors;
         header("Location: create_user.php");
     } else {
-        $dao->createUser($email, $password,1);
+        $dao->createUser($email,$name, $password,1);
         $alert = "User with email " . $email . "successfully created.";
         $_SESSION['user-created'] = $email;
+
+//        echo "<pre>". print_r($_POST) ."</pre>";
         header("Location: login.php");
     }
     exit;
