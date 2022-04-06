@@ -109,7 +109,7 @@ div.right-header {
     text-align: center;
 }
 
-.footer, .app, .nav, .aside {
+.footer, .app, .nav, .aside, .right-header{
     padding: 1em;
 }
 
