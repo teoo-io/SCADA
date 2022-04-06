@@ -16,15 +16,15 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']){
             <div id="left-header">
             </div>
             <div id="middle-header">
-                <img src="img/logo-large.png" height="200px" width="200px">
+                <a href="index.php"><img src="img/clear-logo.png" id="header-logo"></a>
             </div>
             <div class="right-header">
                 <input id="menu-input" type="checkbox" name="menu-input" />
-                <label for="menu-input"><h1 class="name"><?php echo " ". $_SESSION['name'] . " ";?></h1><i class="fas fa-user-circle" id="user-icon"></i></label>
+                <label for="menu-input"><?php echo " ". $_SESSION['name'] . " ";?><i class="fas fa-user-circle" id="user-icon"></i></label>
                 <div id="drop-down">
-                    <ul class="submenu">
-                    <li class="menu-li"><a href="logout.php">Log out</a></li>
-                    <li class="menu-li"><a href="account_delete_handler.php">Delete Account</a></li>
+                    <ul id="submenu">
+                        <li id="menu-li"><a href="logout.php">Log out</a></li>
+                        <li id="menu-li"><a href="account_delete_handler.php">Delete Account</a></li>
                     </ul>
                 </div>
             </div>
