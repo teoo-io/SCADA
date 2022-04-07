@@ -5,9 +5,14 @@
 ?>
    <div class ="app">
        INCLINOMETER
-       <p>
-           <img src="img/clino.png" id="clinometer">
-       </p>
+       <div class="header">
+           <div id="left-clino">
+               <img src="img/clino1.png" id="clinometer1">
+           </div>
+           <div class="right-clino">
+               <img src="img/clino2.png" id="clinometer2">
+           </div>
+       </div>
    </div>
 
 

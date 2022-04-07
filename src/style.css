@@ -68,7 +68,8 @@ body{
 
 
 #nav-i {
-    text-shadow: 4px 4px 28px dimgray;
+    padding-bottom: .5rem;
+    text-shadow: 4px 4px 28px var(--gray-dark);
 }
 #current_page-li {
     padding: 0 0.8rem 0 0;
@@ -110,20 +111,46 @@ div.middle-header {
 div.right-header {
     text-align: right;
 }
+.left-light{
+    text-align: right;
+    justify-content: right;
+}
 
-div.middle-light{
+.middle-light{
     text-align: center;
     justify-content: center;
 }
-
-div.right-light {
-    text-align: center;
-    justify-content: center;
-}
-#clinometer {
-    padding-left: 11rem;
+.right-light {
+    text-align: left;
+    justify-content: left;
 }
 
+
+/* CLINO */
+
+.right-clino {
+    text-align: left;
+    justify-content: left;
+}
+
+
+.left-clino{
+    text-align: right;
+    justify-content: right;
+}
+
+#clinometer1 {
+    display: block;
+    margin: auto;
+    max-width: 50%;
+    height: auto;
+}
+#clinometer2 {
+    max-width: 50%;
+    height: auto;
+    margin: auto;
+}
+/* END CLINO */
 .footer {
     text-align: center;
 }

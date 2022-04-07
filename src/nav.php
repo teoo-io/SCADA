@@ -15,7 +15,7 @@
             if($application['app_enabled']){
                 echo "<a href='{$application['app_directory']}' class='nav-anchor'><li ";
                 if ($current == $application['app_name']) { echo "id='current_page-li'"; } else { echo "id='nav-li'"; }
-                echo "> <i class='{$application['app_logo']}'></i></li> </a>";
+                echo "> <i class='{$application['app_logo']}' id='nav-i'></i></li> </a>";
             }
         }
         ?>
