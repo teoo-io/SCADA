@@ -107,6 +107,9 @@ body{
 div.middle-header {
     justify-content: center;
 }
+#lights.app {
+    margin-top: 30px;
+}
 
 div.right-header {
     text-align: right;
