@@ -1,7 +1,6 @@
         </div>
         <div class="footer" >
-            <h3>Copyright&#169 Mateo Ortegon</h3>
-            <a href="https://github.com/teoo-io/SCADA">View source-code + CI/CD</a>
+            <h3>Copyright &#169 R2 Technologies</h3>
         </div>
     </body>
 </html>

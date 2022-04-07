@@ -3,6 +3,12 @@ session_start();
 if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']){
     header("Location: login.php");
 }
+if(!isset($_SESSION['ran'])){
+    $_SESSION['ran'] = 1;
+    shell_exec("sudo raspi-gpio set 20 op");
+    shell_exec("sudo raspi-gpio set 26 op");
+    shell_exec("sudo raspi-gpio set 21 op");
+}
 ?>
 <html lang="en">
     <head>
@@ -19,14 +25,7 @@ if(!isset($_SESSION['authenticated']) || !$_SESSION['authenticated']){
                 <a href="index.php"><img src="img/clear-logo.png" id="header-logo"></a>
             </div>
             <div class="right-header">
-                <input id="menu-input" type="checkbox" name="menu-input" />
-                <label for="menu-input"><?php echo " ". $_SESSION['name'] . " ";?><i class="fas fa-user-circle" id="user-icon"></i></label>
-                <div id="drop-down">
-                    <ul id="submenu">
-                        <li id="menu-li"><a href="logout.php">Log out</a></li>
-                        <li id="menu-li"><a href="account_delete_handler.php">Delete Account</a></li>
-                    </ul>
-                </div>
+                <a href="logout.php"><h1><?php echo " ". $_SESSION['name'] . " ";?></h1><i class="fas fa-user-circle" id="user-icon"></i></a>
             </div>
         </div>
         <div class="page-container">

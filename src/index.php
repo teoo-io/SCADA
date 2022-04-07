@@ -3,9 +3,8 @@
     require_once 'header.php';
 
 ?>
-   <div class ="content">
-
-
+   <div class ="app">
+       INDEX
    </div>
 
 
