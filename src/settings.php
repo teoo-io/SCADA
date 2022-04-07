@@ -5,7 +5,7 @@ require_once 'header.php';
 ?>
     <div class ="app" id="settings">
         <ul id='nav-li'>
-            <form method="post">
+            <form action="app_handler.php" method="POST">
             <?php
             require_once 'dao.php';
             $dao = new DAO();
@@ -14,15 +14,10 @@ require_once 'header.php';
             foreach ($applications as $application){
                 echo "<a href='{$application['app_directory']}' class='nav-anchor'><li> <i class='{$application['app_logo']}'></i></li> </a>";
                 if($application['app_enabled']){
-                    echo "<input type='submit' name='app_disable' value='Disable' />";
+                    echo "<input type='submit' name='app_disable' value='Disable' id='app_disable'/>";
                 } else {
-                    echo "<input type='submit' name='app_enable' value='Enable' />";
+                    echo "<input type='submit' name='app_enable' value='Enable' id='app_disable'/>";
                 }
-            }
-            if(array_key_exists('app_enable', $_POST)) {
-                $dao->enableApplication('lights');
-            } else if(array_key_exists('app_disable', $_POST)) {
-                $dao->disableApplication('lights');
             }
 
             ?>

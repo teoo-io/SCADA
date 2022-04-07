@@ -120,6 +120,9 @@ div.right-light {
     text-align: center;
     justify-content: center;
 }
+#clinometer {
+    padding-left: 11rem;
+}
 
 .footer {
     text-align: center;

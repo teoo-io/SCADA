@@ -4,7 +4,10 @@
 
 ?>
    <div class ="app">
-       INDEX
+       INCLINOMETER
+       <p>
+           <img src="img/clino.png" id="clinometer">
+       </p>
    </div>
 
 
