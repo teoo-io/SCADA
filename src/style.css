@@ -125,6 +125,24 @@ div.right-header {
     justify-content: left;
 }
 
+#light-i {
+    padding-bottom: .5rem;
+    text-shadow: 4px 4px 28px var(--gray-dark);
+    display: block;
+    margin: auto;
+    max-width: 50%;
+    height: auto;
+}
+
+#current_light-i {
+    color: var(--yellow);
+    text-shadow: 4px 4px 28px dimgray;
+    display: block;
+    margin: auto;
+    max-width: 50%;
+    height: auto;
+}
+
 
 /* CLINO */
 
